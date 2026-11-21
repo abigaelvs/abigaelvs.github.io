@@ -1,0 +1,22 @@
+@page "/"
+@inject NavigationManager Nav
+@inject IJSRuntime JS
+
+<PageTitle>Abigael Vaneakh | Software Engineer</PageTitle>
+
+<Hero />
+<About />
+<Skills />
+<Qualification />
+<PortfolioSection />
+<Contact />
+
+@code {
+    // Coming from /projects/{slug} via "/#section": Blazor scrolls before this page has rendered, so do it here.
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+        var id = new Uri(Nav.Uri).Fragment.TrimStart('#');
+        if (id.Length > 0) await JS.InvokeVoidAsync("scrollToId", id);
+    }
+}

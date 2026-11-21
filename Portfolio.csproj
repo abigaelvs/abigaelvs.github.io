@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
+    <!-- Smaller download: no ICU data (~2 MB); the site needs no culture-specific formatting.
+         Do not set TrimMode=full: BlazorBlueprint sends anonymous objects through JS interop and breaks when fully trimmed. -->
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <!-- Tailwind standalone CLI (gitignored): generates wwwroot/css/app.css from Styles/app.css before every build. -->
+  <PropertyGroup>
+    <TailwindBin Condition="$([MSBuild]::IsOSPlatform('Windows'))">.tools\tailwindcss.exe</TailwindBin>
+    <TailwindBin Condition="'$(TailwindBin)' == ''">.tools/tailwindcss</TailwindBin>
+  </PropertyGroup>
+  <Target Name="Tailwind" BeforeTargets="BeforeBuild">
+    <Error Condition="!Exists('$(TailwindBin)')" Text="Tailwind CLI not found at $(TailwindBin). Download it from https://github.com/tailwindlabs/tailwindcss/releases (see CLAUDE.md)." />
+    <Exec Command="$(TailwindBin) -i Styles/app.css -o wwwroot/css/app.css --minify" />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="BlazorBlueprint.Components" Version="4.2.0" />
+    <PackageReference Include="BlazorBlueprint.Icons.FontAwesome" Version="2.0.0" />
+    <PackageReference Include="BlazorBlueprint.Icons.Lucide" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.12" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,6 @@
+<FontAwesomeIcon Name="@Name" Variant="FontAwesomeIconVariant.Brands" Size="Size" />
+
+@code {
+    [Parameter, EditorRequired] public string Name { get; set; } = "";
+    [Parameter] public int Size { get; set; } = 20;
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "formrobo",
+    "title": "Formrobo",
+    "summary": "A tool to automate your Google Form process.",
+    "description": "When COVID-19 started spreading in Indonesia, schools switched to online learning. In my class we used Google Forms to mark attendance, so every weekday I had to fill in two or three forms a day. After a week this became repetitive, so I made this program to automate the process.",
+    "tags": ["Python"],
+    "sourceUrl": "https://github.com/abigaelvs/formrobo",
+    "demoUrl": null,
+    "images": ["img/portfolio/formrobo1.png", "img/portfolio/formrobo2.png", "img/portfolio/formrobo3.png", "img/portfolio/formrobo4.png"]
+  },
+  {
+    "slug": "dj-ecommerce",
+    "title": "Dj Ecommerce",
+    "summary": "E-commerce website built with the Django framework.",
+    "description": "During the pandemic e-commerce became more popular, because people had to stay at home while still needing to buy things. I wanted to sharpen my Django skills, so I created a simple e-commerce website using an MDBootstrap template.",
+    "tags": ["Python", "Django", "Bootstrap"],
+    "sourceUrl": "https://github.com/abigaelvs/djecommerce",
+    "demoUrl": null,
+    "images": ["img/portfolio/djecommerce1.png", "img/portfolio/djecommerce2.png", "img/portfolio/djecommerce3.png", "img/portfolio/djecommerce4.png", "img/portfolio/djecommerce5.png"]
+  },
+  {
+    "slug": "todo-app",
+    "title": "To Do App",
+    "summary": "A to-do app to manage your tasks.",
+    "description": "After learning the basics of Flask, I wanted to build a simple website with this framework to sharpen my skills. This is what I came up with.",
+    "tags": ["Python", "Flask"],
+    "sourceUrl": "https://github.com/abigaelvs/flask-todo-app",
+    "demoUrl": null,
+    "images": ["img/portfolio/todo1.png", "img/portfolio/todo2.png"]
+  },
+  {
+    "slug": "contact-list-app",
+    "title": "Contact List App",
+    "summary": "A contact list app using the Django framework.",
+    "description": "After learning the basics of Django I wanted to deepen my knowledge and practice, so I built a contact list app.",
+    "tags": ["Python", "Django"],
+    "sourceUrl": "https://github.com/abigaelvs/django-contact-list",
+    "demoUrl": null,
+    "images": ["img/portfolio/contact1.png", "img/portfolio/contact2.png"]
+  },
+  {
+    "slug": "youtube-downloader",
+    "title": "YouTube Video Downloader",
+    "summary": "A web app to download YouTube videos.",
+    "description": "Sometimes I want to download a YouTube video. The Chrome extension I found limited the video resolution, so I built my own downloader using the pytube library with a web interface made in Flask.",
+    "tags": ["Python", "Flask"],
+    "sourceUrl": "https://github.com/abigaelvs/ytdownloader",
+    "demoUrl": null,
+    "images": ["img/portfolio/ytdownloader1.png", "img/portfolio/ytdownloader2.png"]
+  },
+  {
+    "slug": "weather-app",
+    "title": "Weather App",
+    "summary": "A web app to forecast the weather.",
+    "description": "After learning the basics of APIs I wanted to practice, so I looked for an open API and found a weather API. I read its docs and built the web interface using Flask.",
+    "tags": ["Python", "Flask", "API"],
+    "sourceUrl": "https://github.com/abigaelvs/weather-app",
+    "demoUrl": null,
+    "images": ["img/portfolio/weather1.png", "img/portfolio/weather2.png"]
+  },
+  {
+    "slug": "image-classification",
+    "title": "Image Classification",
+    "summary": "A machine learning project to classify images.",
+    "description": "When I started learning machine learning I took an online course on Dicoding. This is a project from that course; the notebook is available on Google Colab.",
+    "tags": ["Python", "Machine Learning"],
+    "sourceUrl": "https://colab.research.google.com/drive/1JGltPyDbXiZtKYO-OD7KA4M5Onte01HC?usp=sharing",
+    "demoUrl": null,
+    "images": ["img/portfolio/classification1.png", "img/portfolio/classification2.png"]
+  }
+]

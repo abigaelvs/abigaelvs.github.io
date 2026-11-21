@@ -1,0 +1,40 @@
+@inject PortfolioData Data
+<section class="pb-16 pt-8 md:pb-8 md:pt-24">
+    <SectionTitle Title="Qualification" Subtitle="My Personal Journey" />
+    <div class="wrap">
+        <div class="mb-8 flex items-center justify-center text-[1.125rem] font-medium text-primary min-[968px]:text-xl">
+            <FontAwesomeIcon Name="graduation-cap" Size="29" Class="mr-1" /> Education
+        </div>
+
+        @* Old site's timeline: left, right, left... with a dot and a 1px line in the middle column. *@
+        <div class="mx-auto min-[568px]:w-3/5 md:w-1/2">
+            @for (var i = 0; i < Data.Profile.Education.Count; i++)
+            {
+                var e = Data.Profile.Education[i];
+                var left = i % 2 == 0;
+                var last = i == Data.Profile.Education.Count - 1;
+                <div class="grid grid-cols-[1fr_max-content_1fr] gap-x-6">
+                    @if (left) { <div>@Entry(e)</div> } else { <div></div> }
+                    <div>
+                        <span class="inline-block size-[13px] rounded-full bg-primary"></span>
+                        @if (!last)
+                        {
+                            <span class="block h-full w-px -translate-y-[7px] translate-x-[6px] bg-primary"></span>
+                        }
+                    </div>
+                    @if (!left) { <div>@Entry(e)</div> } else { <div></div> }
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+@code {
+    RenderFragment Entry(Education e) => @<div>
+        <h3 class="text-[0.938rem] font-medium leading-[normal] min-[968px]:text-base">@e.School</h3>
+        <span class="mb-4 inline-block text-[0.813rem] min-[968px]:text-sm">@e.Years</span>
+        <div class="flex items-center gap-1 text-xs text-subtle min-[968px]:text-[0.813rem]">
+            <LucideIcon Name="calendar" Size="14" /> @e.Period
+        </div>
+    </div>;
+}

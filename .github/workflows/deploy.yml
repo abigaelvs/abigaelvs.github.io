@@ -1,0 +1,63 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  TAILWIND_VERSION: v4.3.5
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      # Tailwind standalone CLI (no Node). Verified against the checksums published with the release.
+      - name: Download Tailwind CLI
+        run: |
+          mkdir -p .tools
+          cd .tools
+          base="https://github.com/tailwindlabs/tailwindcss/releases/download/${TAILWIND_VERSION}"
+          curl -fsSLO "$base/tailwindcss-linux-x64"
+          curl -fsSLO "$base/sha256sums.txt"
+          grep -E "  \./tailwindcss-linux-x64$" sha256sums.txt | sha256sum -c -
+          mv tailwindcss-linux-x64 tailwindcss
+          chmod +x tailwindcss
+
+      - name: Publish
+        run: dotnet publish Portfolio.csproj -c Release -o release
+
+      # GitHub Pages serves 404.html for unknown paths, which lets deep links like /projects/todo-app reach the SPA router.
+      # The .br/.gz copies are not used by Pages, so leave them out of the upload.
+      - name: Prepare site
+        run: |
+          cp release/wwwroot/index.html release/wwwroot/404.html
+          find release/wwwroot -name '*.br' -delete
+          find release/wwwroot -name '*.gz' -delete
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: release/wwwroot
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

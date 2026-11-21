@@ -1,0 +1,20 @@
+@inject PortfolioData Data
+<section id="portfolio" class="pb-16 pt-8 md:pb-8 md:pt-24">
+    <SectionTitle Title="Portfolio" Subtitle="Most recent work" />
+    <div class="wrap mb-20 lg:mb-24">
+        <SlideCarousel Count="Data.Projects.Count" AriaLabel="Projects">
+            <Slide Context="i">
+                @{ var pr = Data.Projects[i]; }
+                <div class="grid gap-6 px-6 min-[568px]:grid-cols-2 md:items-center lg:gap-x-20">
+                    <BbImage Src="@pr.Images[0]" Alt="@($"{pr.Title} screenshot")" Fit="ImageFit.Cover"
+                             Class="h-auto w-[265px] justify-self-center rounded-lg md:w-[320px]" />
+                    <div>
+                        <h3 class="mb-2 text-[1.125rem] min-[968px]:text-xl">@pr.Title</h3>
+                        <p class="mb-3">@pr.Summary</p>
+                        <SiteButton Small="true" Href="@($"projects/{pr.Slug}")" Icon="arrow-right">Details</SiteButton>
+                    </div>
+                </div>
+            </Slide>
+        </SlideCarousel>
+    </div>
+</section>

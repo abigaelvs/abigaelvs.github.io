@@ -1,0 +1,119 @@
+@inherits LayoutComponentBase
+@inject PortfolioData Data
+
+<BbPortalHost />
+
+@if (Data.Profile is null)
+{
+    <div class="grid min-h-[80vh] place-items-center"><BbSpinner Size="SpinnerSize.Large" /></div>
+}
+else
+{
+    var p = Data.Profile;
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground">Skip to content</a>
+
+    @* Old site: fixed bar at the bottom on mobile, at the top from 768px. *@
+    <header data-header class="fixed bottom-0 left-0 z-40 w-full rounded-t-3xl bg-background transition-shadow data-scrolled:shadow-[0_-1px_4px_rgba(0,0,0,0.15)] md:bottom-auto md:top-0 md:px-4 lg:px-0">
+        <nav class="mx-6 flex h-12 max-w-[968px] items-center justify-between max-[350px]:mx-4 md:mx-auto md:gap-x-4" aria-label="Main">
+            <a href="#home" class="font-medium text-foreground transition-colors hover:text-primary">@p.Name</a>
+
+            <ul class="ml-auto hidden gap-x-8 md:flex">
+                @foreach (var s in Sections)
+                {
+                    <li>
+                        <a href="#@s.Id" data-nav="@s.Id"
+                           class="text-[0.813rem] font-medium text-foreground transition-colors hover:text-primary data-active:text-primary min-[968px]:text-sm">@s.Label</a>
+                    </li>
+                }
+            </ul>
+
+            <div class="flex items-center gap-1">
+                <BbDarkModeToggle Variant="ButtonVariant.Ghost">
+                    <LightIcon><LucideIcon Name="moon" Size="20" /></LightIcon>
+                    <DarkIcon><LucideIcon Name="sun" Size="20" /></DarkIcon>
+                </BbDarkModeToggle>
+
+                <div class="md:hidden">
+                    <BbSheet @bind-Open="menuOpen" Side="SheetSide.Bottom">
+                        <BbSheetTrigger>
+                            <BbButton Variant="ButtonVariant.Ghost" Size="ButtonSize.Icon" AriaLabel="Open menu">
+                                <LucideIcon Name="layout-grid" Size="20" />
+                            </BbButton>
+                        </BbSheetTrigger>
+                        <BbSheetContent Class="rounded-t-3xl px-6 pb-12 pt-8">
+                            <BbSheetHeader class="sr-only">
+                                <BbSheetTitle>Menu</BbSheetTitle>
+                            </BbSheetHeader>
+                            <ul class="grid grid-cols-3 gap-y-8">
+                                @foreach (var s in Sections)
+                                {
+                                    <li class="flex justify-center">
+                                        <a href="#@s.Id" data-nav="@s.Id" @onclick="() => menuOpen = false"
+                                           class="flex flex-col items-center gap-1 text-[0.813rem] font-medium text-foreground transition-colors hover:text-primary data-active:text-primary">
+                                            <LucideIcon Name="@s.Icon" Size="20" />
+                                            @s.Label
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </BbSheetContent>
+                    </BbSheet>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main" tabindex="-1">@Body</main>
+
+    <footer class="pt-8">
+        <div class="bg-footer pb-12 pt-8 md:pb-14 md:pt-12">
+            <div class="wrap grid gap-x-6 gap-y-14 min-[568px]:grid-cols-3">
+                <div>
+                    <h1 class="mb-1 text-2xl font-semibold leading-[normal] text-white min-[968px]:text-4xl min-[968px]:leading-[normal]">@p.Name</h1>
+                    <span class="text-[0.813rem] text-white min-[968px]:text-sm">@p.Title</span>
+                </div>
+
+                <ul class="flex flex-col gap-y-6 md:flex-row md:gap-x-8">
+                    @foreach (var s in Sections.Where(s => s.Id is "about" or "portfolio" or "contact"))
+                    {
+                        <li><a href="#@s.Id" class="text-white transition-colors hover:text-[hsl(225_92%_85%)]">@s.Label</a></li>
+                    }
+                </ul>
+
+                <div class="flex md:justify-self-end">
+                    @foreach (var s in p.Socials)
+                    {
+                        <a href="@s.Url" target="_blank" rel="noopener noreferrer" aria-label="@s.Name"
+                           class="mr-6 text-xl text-white transition-colors hover:text-[hsl(225_92%_85%)]">
+                            <SocialIcon Name="@s.Icon" Size="20" />
+                        </a>
+                    }
+                </div>
+            </div>
+
+            <p class="mt-12 text-center text-xs text-subtle min-[968px]:text-[0.813rem] md:mt-[4.5rem]">© @p.Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <BbScrollToTop VisibleAt="560" AriaLabel="Back to top"
+                   Class="bottom-[4.5rem]! right-4! size-auto! rounded-md! bg-primary! p-1.5! text-white! opacity-80 shadow-none! border-transparent! hover:bg-primary-alt! md:bottom-6!">
+        <FontAwesomeIcon Name="chevron-up" Size="22" />
+    </BbScrollToTop>
+}
+
+@code {
+    record Section(string Label, string Id, string Icon);
+
+    static readonly Section[] Sections =
+    [
+        new("Home", "home", "house"),
+        new("About", "about", "user"),
+        new("Skills", "skills", "file-text"),
+        new("Portfolio", "portfolio", "images"),
+        new("Contact", "contact", "send"),
+    ];
+
+    bool menuOpen;
+
+    protected override async Task OnInitializedAsync() => await Data.LoadAsync();
+}

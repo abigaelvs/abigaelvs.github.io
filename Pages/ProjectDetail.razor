@@ -1,0 +1,50 @@
+@page "/projects/{Slug}"
+@inject PortfolioData Data
+
+@if (project is null)
+{
+    <PageTitle>Project not found</PageTitle>
+    <section class="wrap pb-16 pt-24">
+        <BbEmpty Title="Project not found" Description="@($"There is no project called \"{Slug}\".")">
+            <Icon><LucideIcon Name="search" /></Icon>
+            <ChildContent><SiteButton Href="#portfolio">Back to portfolio</SiteButton></ChildContent>
+        </BbEmpty>
+    </section>
+}
+else
+{
+    <PageTitle>@project.Title | @Data.Profile.Name</PageTitle>
+    <section id="details" class="pb-16 pt-8 md:pb-8 md:pt-24">
+        <SectionTitle Title="@project.Title" Subtitle="Detail of the Project" />
+
+        <div class="wrap mb-20">
+            <SlideCarousel Count="project.Images.Count" AriaLabel="@($"{project.Title} screenshots")">
+                <Slide Context="i">
+                    <div class="flex justify-center px-6">
+                        <BbImage Src="@project.Images[i]" Alt="@($"{project.Title} screenshot {i + 1}")" Fit="ImageFit.Contain"
+                                 Class="h-auto w-[265px] max-w-full min-[568px]:w-[520px] md:w-[700px]" />
+                    </div>
+                </Slide>
+            </SlideCarousel>
+        </div>
+
+        <div class="wrap">
+            <p class="mb-8">@project.Description</p>
+            <div class="text-center">
+                @if (project.DemoUrl is not null)
+                {
+                    <span class="mb-3 mr-3 inline-block"><SiteButton Href="@project.DemoUrl" Target="_blank" Icon="tv">Demo</SiteButton></span>
+                }
+                <span class="mb-3 mr-3 inline-block"><SiteButton Href="@project.SourceUrl" Target="_blank" Icon="code">Source Code</SiteButton></span>
+            </div>
+        </div>
+    </section>
+}
+
+@code {
+    [Parameter] public string Slug { get; set; } = "";
+
+    Project? project;
+
+    protected override void OnParametersSet() => project = Data.Projects.FirstOrDefault(p => p.Slug == Slug);
+}

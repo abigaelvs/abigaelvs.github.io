@@ -1,0 +1,42 @@
+@inject PortfolioData Data
+<section id="skills" class="pb-16 pt-8 md:pb-8 md:pt-24">
+    <SectionTitle Title="Skills" Subtitle="My Technical Skills" />
+    <div class="wrap">
+        <BbAccordion Type="AccordionType.Multiple" DefaultValue="@(Data.Profile.SkillGroups.Select(g => g.Name).ToHashSet())"
+                     Class="grid items-start gap-x-6 min-[568px]:grid-cols-2">
+            @foreach (var g in Data.Profile.SkillGroups)
+            {
+                <BbAccordionItem Value="@g.Name" Class="border-b-0">
+                    <BbAccordionTrigger Class="py-0 pb-10 hover:no-underline">
+                        <ChildContent>
+                            <span class="flex items-center text-left">
+                                <LucideIcon Name="@g.Icon" Size="32" Class="mr-3 text-primary" />
+                                <span>
+                                    <span class="mb-2 block text-[1.125rem] font-semibold leading-[normal] text-foreground min-[968px]:text-xl">@g.Name</span>
+                                    <span class="block text-[0.813rem] font-normal leading-[normal] text-subtle min-[968px]:text-sm">@g.Details</span>
+                                </span>
+                            </span>
+                        </ChildContent>
+                        <Icon>
+                            <LucideIcon Name="chevron-down" Size="32" Class="@(context ? "rotate-180 text-primary transition-transform" : "text-primary transition-transform")" />
+                        </Icon>
+                    </BbAccordionTrigger>
+                    <BbAccordionContent>
+                        <div class="grid gap-y-6 pb-10 pl-[2.7rem]">
+                            @foreach (var s in g.Skills)
+                            {
+                                <div>
+                                    <div class="mb-2 flex justify-between">
+                                        <span class="font-medium leading-[normal] text-foreground">@s.Name</span>
+                                        <span class="text-[1.125rem] leading-[normal] min-[968px]:text-xl">@s.Level%</span>
+                                    </div>
+                                    <BbProgress Value="@s.Level" Class="h-[5px] rounded-sm bg-[hsl(225_92%_85%)]" />
+                                </div>
+                            }
+                        </div>
+                    </BbAccordionContent>
+                </BbAccordionItem>
+            }
+        </BbAccordion>
+    </div>
+</section>

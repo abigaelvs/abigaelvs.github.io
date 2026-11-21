@@ -1,0 +1,20 @@
+<BbButton Href="@Href" Target="@Target" Rel="@(Target == "_blank" ? "noopener noreferrer" : null)"
+          Class="@(Small ? SmallClass : NormalClass)">
+    @ChildContent
+    @if (Icon is not null)
+    {
+        <LucideIcon Name="@Icon" Size="20" Class="ml-2" />
+    }
+</BbButton>
+
+@code {
+    // The old site's button: 1rem padding, 0.5rem radius, primary background, white text, darker on hover.
+    const string NormalClass = "h-auto gap-0 rounded-lg bg-primary p-4 text-[0.938rem] font-medium text-white transition-colors hover:bg-primary-alt min-[968px]:text-base";
+    const string SmallClass = "h-auto gap-0 rounded-lg bg-primary px-4 py-3 text-[0.938rem] font-medium text-white transition-colors hover:bg-primary-alt min-[968px]:text-base";
+
+    [Parameter] public string? Href { get; set; }
+    [Parameter] public string? Target { get; set; }
+    [Parameter] public string? Icon { get; set; }
+    [Parameter] public bool Small { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

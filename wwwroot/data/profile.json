@@ -1,0 +1,49 @@
+{
+  "name": "Abigael Vaneakh",
+  "title": "Software Engineer",
+  "tagline": "Fresh Graduate from SMK Negeri 3 Bogor",
+  "about": "A software engineer who is always eager to learn new technologies.",
+  "email": "abigaelvas@gmail.com",
+  "phone": "+62 895 - 6133 - 70019",
+  "address": "Bogor, Indonesia",
+  "nationality": "Indonesian",
+  "careerStartYear": 2020,
+  "cvUrl": "pdf/CV-Abigael-Vaneakh.pdf",
+  "photo": "img/abigaelvs.png",
+  "aboutPhoto": "img/cv-photo-red.jpg",
+  "socials": [
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/abigael-vaneakh-76a580199/", "icon": "linkedin" },
+    { "name": "GitHub", "url": "https://github.com/abigaelvs", "icon": "github" },
+    { "name": "Instagram", "url": "https://www.instagram.com/abigaelvs/", "icon": "instagram" }
+  ],
+  "skillGroups": [
+    {
+      "name": "Backend Developer",
+      "details": "Medium, 1 Year",
+      "icon": "network",
+      "skills": [
+        { "name": "Python", "level": 95 },
+        { "name": "Django", "level": 92 },
+        { "name": "Flask", "level": 85 },
+        { "name": "FastAPI", "level": 50 },
+        { "name": "SQL", "level": 80 }
+      ]
+    },
+    {
+      "name": "Frontend Developer",
+      "details": "Medium, 1 Year",
+      "icon": "braces",
+      "skills": [
+        { "name": "HTML", "level": 90 },
+        { "name": "CSS", "level": 87 },
+        { "name": "Bootstrap", "level": 85 },
+        { "name": "JavaScript", "level": 75 }
+      ]
+    }
+  ],
+  "education": [
+    { "school": "SDN Kencana 1 Bogor", "years": "6 Years", "period": "2009 - 2015" },
+    { "school": "SMPN 16 Bogor", "years": "3 Years", "period": "2015 - 2018" },
+    { "school": "SMKN 3 Bogor", "years": "3 Years", "period": "2018 - 2021" }
+  ]
+}

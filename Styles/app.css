@@ -1,0 +1,109 @@
+/* Tailwind v4 without preflight: BlazorBlueprint ships its own reset. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@source "../Components";
+@source "../Layout";
+@source "../Pages";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-alt: var(--primary-alt);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--subtle);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-footer: var(--footer);
+}
+
+/* Palette from the old site (hue 225). `html[data-base-color]` outranks BlazorBlueprint's themes.css. */
+html[data-base-color] {
+  --background: hsl(225 60% 99%);
+  --foreground: hsl(225 8% 15%);
+  --card: #fff;
+  --card-foreground: hsl(225 8% 15%);
+  --popover: #fff;
+  --popover-foreground: hsl(225 8% 15%);
+  --primary: hsl(225 69% 61%);
+  --primary-alt: hsl(225 57% 53%);
+  --primary-foreground: #fff;
+  --secondary: hsl(225 70% 96%);
+  --secondary-foreground: hsl(225 8% 15%);
+  --muted: hsl(225 70% 96%);
+  --muted-foreground: hsl(225 8% 45%);
+  --subtle: hsl(225 8% 65%);
+  --accent: hsl(225 70% 96%);
+  --accent-foreground: hsl(225 8% 15%);
+  --border: hsl(225 12% 90%);
+  --input: hsl(225 12% 90%);
+  --ring: hsl(225 69% 61%);
+  --footer: hsl(225 69% 61%);
+}
+
+html.dark[data-base-color] {
+  --background: hsl(225 28% 12%);
+  --foreground: hsl(225 8% 95%);
+  --card: hsl(225 29% 16%);
+  --card-foreground: hsl(225 8% 95%);
+  --popover: hsl(225 29% 16%);
+  --popover-foreground: hsl(225 8% 95%);
+  --primary: hsl(225 69% 61%);
+  --primary-alt: hsl(225 57% 53%);
+  --primary-foreground: #fff;
+  --secondary: hsl(225 29% 20%);
+  --secondary-foreground: hsl(225 8% 95%);
+  --muted: hsl(225 29% 20%);
+  --muted-foreground: hsl(225 8% 75%);
+  --subtle: hsl(225 8% 65%);
+  --accent: hsl(225 29% 20%);
+  --accent-foreground: hsl(225 8% 95%);
+  --border: hsl(225 20% 26%);
+  --input: hsl(225 20% 26%);
+  --ring: hsl(225 69% 61%);
+  --footer: hsl(225 30% 8%);
+}
+
+/* Old site's container: 768px wide, 1.5rem side margins (1rem on very small screens). */
+@utility wrap {
+  width: calc(100% - 3rem);
+  max-width: 48rem;
+  margin-inline: auto;
+  @media (max-width: 350px) { width: calc(100% - 2rem); }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0 0 3rem;
+    background: var(--background);
+    color: var(--muted-foreground);
+    font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.938rem;
+  }
+  h1, h2, h3, h4 { color: var(--foreground); font-weight: 600; }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+  main:focus { outline: none; }
+  @media (min-width: 768px) { body { margin: 0; } }
+  @media (min-width: 968px) { body { font-size: 1rem; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  ::-webkit-scrollbar { width: 0.6rem; background-color: var(--border); border-radius: 0.5rem; }
+  ::-webkit-scrollbar-thumb { background-color: var(--subtle); border-radius: 0.5rem; }
+  ::-webkit-scrollbar-thumb:hover { background-color: var(--muted-foreground); }
+}
+
+#blazor-error-ui {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000;
+  padding: .6rem 1.25rem; background: #fef3c7; color: #111;
+}
+#blazor-error-ui .dismiss { cursor: pointer; position: absolute; right: .75rem; top: .5rem; }

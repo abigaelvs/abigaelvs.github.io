@@ -1,0 +1,42 @@
+@inject PortfolioData Data
+@{
+    var p = Data.Profile;
+    var github = p.Socials.FirstOrDefault(s => s.Name == "GitHub")?.Url;
+}
+<section id="about" class="pb-16 pt-8 md:pb-8 md:pt-24">
+    <SectionTitle Title="About Me" Subtitle="My introduction" />
+    <div class="wrap grid gap-6 min-[568px]:grid-cols-2 md:gap-x-20">
+        <BbImage Src="@p.AboutPhoto" Alt="@p.Name" Fit="ImageFit.Cover"
+                 Class="h-auto w-[200px] self-center justify-self-center rounded-lg md:w-[350px]" />
+        <div>
+            <ul class="mb-6">
+                <li class="border-b border-border py-3">Name: @p.Name</li>
+                <li class="border-b border-border py-3">Email: <a href="mailto:@p.Email">@p.Email</a></li>
+                @if (github is not null)
+                {
+                    <li class="border-b border-border py-3">Github: <a href="@github" target="_blank" rel="noopener noreferrer">@github</a></li>
+                }
+                <li class="border-b border-border py-3">Phone: @p.Phone</li>
+                <li class="border-b border-border py-3">Address: @p.Address</li>
+                <li class="border-b border-border py-3">Nationality: @p.Nationality</li>
+            </ul>
+
+            <p class="mb-10 text-center md:text-left">@p.About</p>
+
+            <div class="mb-10 flex justify-evenly text-center">
+                <div>
+                    <span class="block text-xl font-semibold text-foreground min-[968px]:text-2xl">@p.YearsExperience.ToString("D2")</span>
+                    <span class="block text-xs min-[968px]:text-[0.813rem]">Years<br />Experience</span>
+                </div>
+                <div>
+                    <span class="block text-xl font-semibold text-foreground min-[968px]:text-2xl">@Data.Projects.Count</span>
+                    <span class="block text-xs min-[968px]:text-[0.813rem]">Completed<br />Project</span>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <SiteButton Href="@p.CvUrl" Target="_blank" Icon="download">Download CV</SiteButton>
+            </div>
+        </div>
+    </div>
+</section>

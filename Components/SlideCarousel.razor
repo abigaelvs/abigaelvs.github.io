@@ -1,0 +1,40 @@
+@* BbCarousel with the old Swiper look: bare chevrons on the sides and small dots below. *@
+<div class="relative">
+    <BbCarousel @ref="carousel" Loop="true" @bind-ActiveIndex="index" AriaLabel="@AriaLabel">
+        <BbCarouselContent>
+            @for (var i = 0; i < Count; i++)
+            {
+                var n = i; // captured by the item's render fragment, which runs after the loop ends
+                <BbCarouselItem>@Slide(n)</BbCarouselItem>
+            }
+        </BbCarouselContent>
+    </BbCarousel>
+
+    <button type="button" aria-label="Previous slide" @onclick="() => carousel!.GoToAsync(index - 1)"
+            class="absolute -left-2 top-1/2 -translate-y-1/2 cursor-pointer text-primary transition-colors hover:text-primary-alt lg:-left-14">
+        <FontAwesomeIcon Name="chevron-left" Size="36" />
+    </button>
+    <button type="button" aria-label="Next slide" @onclick="() => carousel!.GoToAsync(index + 1)"
+            class="absolute -right-2 top-1/2 -translate-y-1/2 cursor-pointer text-primary transition-colors hover:text-primary-alt lg:-right-14">
+        <FontAwesomeIcon Name="chevron-right" Size="36" />
+    </button>
+
+    <div class="absolute inset-x-0 -bottom-12 flex justify-center lg:-bottom-[4.5rem]">
+        @for (var i = 0; i < Count; i++)
+        {
+            var target = i;
+            <button type="button" aria-label="@($"Go to slide {target + 1}")" aria-current="@(target == index)"
+                    @onclick="() => carousel!.GoToAsync(target)"
+                    class="@(target == index ? "bg-primary" : "bg-muted-foreground/30") mx-1 size-2 cursor-pointer rounded-full"></button>
+        }
+    </div>
+</div>
+
+@code {
+    BbCarousel? carousel;
+    int index;
+
+    [Parameter, EditorRequired] public int Count { get; set; }
+    [Parameter, EditorRequired] public RenderFragment<int> Slide { get; set; } = default!;
+    [Parameter] public string? AriaLabel { get; set; }
+}

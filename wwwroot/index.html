@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-base-color="zinc">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abigael Vaneakh | Software Engineer</title>
+    <meta name="description" content="Portfolio of Abigael Vaneakh, a software engineer from Bogor, Indonesia. Python, Django, Flask and web development projects." />
+    <meta name="author" content="Abigael Vaneakh" />
+    <meta name="theme-color" content="#5073e0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Abigael Vaneakh | Software Engineer" />
+    <meta property="og:description" content="Portfolio of Abigael Vaneakh, a software engineer from Bogor, Indonesia." />
+    <meta property="og:url" content="https://abigaelvs.github.io/" />
+    <meta property="og:image" content="https://abigaelvs.github.io/img/cv-photo-red.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://abigaelvs.github.io/" />
+    <base href="/" />
+    <link rel="preload" id="webassembly" />
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <script src="_content/BlazorBlueprint.Components/js/theme-init.js"></script>
+    <link rel="stylesheet" href="_content/BlazorBlueprint.Components/blazorblueprint.css" />
+    <link rel="stylesheet" href="_content/BlazorBlueprint.Components/css/themes.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="css/app.css" />
+    <!-- If you add any scoped CSS files, uncomment the following to load them
+    <link href="Portfolio.styles.css" rel="stylesheet" /> -->
+    <script type="importmap"></script>
+</head>
+
+<body>
+    <div id="app" role="status" aria-label="Loading">
+        <div class="mx-auto mt-[40vh] size-10 animate-spin rounded-full border-[3px] border-primary/30 border-t-primary"></div>
+    </div>
+    <noscript><p style="padding:2rem;text-align:center">This site needs JavaScript enabled to run.</p></noscript>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script>
+        window.scrollToId = id => document.getElementById(id)?.scrollIntoView();
+
+        // Header shadow after 80px and nav scrollspy, like the old site. Blazor never touches these data attributes.
+        (() => {
+            let queued = false;
+            const update = () => {
+                queued = false;
+                document.querySelector('[data-header]')?.toggleAttribute('data-scrolled', scrollY >= 80);
+                let active = null;
+                document.querySelectorAll('section[id]').forEach(s => {
+                    const top = s.offsetTop - 50;
+                    if (scrollY > top && scrollY <= top + s.offsetHeight) active = s.id;
+                });
+                document.querySelectorAll('[data-nav]').forEach(a => a.toggleAttribute('data-active', a.dataset.nav === active));
+            };
+            const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+            addEventListener('scroll', queue, { passive: true });
+            addEventListener('resize', queue);
+            new MutationObserver(queue).observe(document.body, { childList: true, subtree: true });
+        })();
+    </script>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
+</body>
+
+</html>

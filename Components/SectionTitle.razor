@@ -1,0 +1,7 @@
+<h2 class="text-center text-2xl font-semibold leading-[normal] min-[968px]:text-4xl min-[968px]:leading-[normal]">@Title</h2>
+<span class="mb-12 block text-center text-[0.813rem] min-[968px]:text-sm md:mb-16">@Subtitle</span>
+
+@code {
+    [Parameter, EditorRequired] public string Title { get; set; } = "";
+    [Parameter] public string? Subtitle { get; set; }
+}

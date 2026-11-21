@@ -1,0 +1,44 @@
+@inject PortfolioData Data
+@{ var p = Data.Profile; }
+<section id="contact" class="pb-16 pt-8 md:pb-8 md:pt-24">
+    <SectionTitle Title="Contact Me" Subtitle="Get in touch" />
+    <div class="wrap grid gap-x-6 gap-y-12 min-[568px]:grid-cols-2">
+        <div>
+            <div class="mb-8 flex">
+                <FontAwesomeIcon Name="location-dot" Size="32" Class="mr-3 text-primary" />
+                <div>
+                    <h3 class="text-[1.125rem] font-medium min-[968px]:text-xl">@p.Name</h3>
+                    <span class="text-[0.813rem] text-subtle min-[968px]:text-sm">@p.Address</span>
+                </div>
+            </div>
+            <div class="mb-8 flex">
+                <LucideIcon Name="phone" Size="32" Class="mr-3 text-primary" />
+                <div>
+                    <h3 class="text-[1.125rem] font-medium min-[968px]:text-xl">Phone</h3>
+                    <span class="text-[0.813rem] text-subtle min-[968px]:text-sm">@p.Phone</span>
+                </div>
+            </div>
+            <div class="mb-8 flex">
+                <LucideIcon Name="mail" Size="32" Class="mr-3 text-primary" />
+                <div>
+                    <h3 class="text-[1.125rem] font-medium min-[968px]:text-xl">Email</h3>
+                    <span class="text-[0.813rem] text-subtle min-[968px]:text-sm"><a href="mailto:@p.Email">@p.Email</a></span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="mb-6 text-[1.125rem] uppercase min-[968px]:text-xl">I'm also on social network</h3>
+            <p class="mb-6">You can also contact me through my social media below</p>
+            <div class="flex">
+                @foreach (var s in p.Socials)
+                {
+                    <a href="@s.Url" target="_blank" rel="noopener noreferrer" aria-label="@s.Name" title="@s.Name"
+                       class="mr-4 text-2xl text-primary transition-colors hover:text-primary-alt">
+                        <SocialIcon Name="@s.Icon" Size="24" />
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</section>
