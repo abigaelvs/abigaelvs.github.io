@@ -3,12 +3,12 @@ var portfolio = {
     1: {
         "title": "Formrobo",
         "short_description": "The project to automate your google form process",
-        "description": `When covid-19 start spreading in indonesia. 
-                        Schools in indonesia are starting to switch to online learning methods. 
-                        In my school, espescially in my class we use google form to mark our presence. 
-                        So every weekdays i have to fill the google form to tell the teacher that i am attending the class. 
-                        After 1 week of online learning this thing starts to become repetitive because i have to fill 2 or 3 form in a day. 
-                        So i made this program to automate those process. You can access the source code on my github below.`,
+        "description": `When COVID-19 started spreading in Indonesia. 
+                        Schools in Indonesia are starting to switch to online learning methods. 
+                        In my school, especially in my class we use google form to mark our presence. 
+                        So every weekdays I have to fill the google form to tell the teacher that I am attending the class. 
+                        After 1 week of online learning this thing starts to become repetitive because I have to fill 2 or 3 form in a day. 
+                        So I made this program to automate those process. You can access the source code on my github below.`,
 
         "source_code": "https://github.com/abigaelvs/formrobo",
         "demo": "",
@@ -23,9 +23,9 @@ var portfolio = {
     2: {
         "title": "Dj Ecommerce",
         "short_description": "Ecommerce website with django framework",
-        "description": `During the pandemic ecommerce becomes more popular. 
+        "description": `During the pandemic e-commerce became more popular. 
                         Because people have to stay at home while they still need to buy the things they need. 
-                        So i think i want to create a simple ecommerce website to sharpen my skills in django framework. 
+                        So I think I want to create a simple ecommerce website to sharpen my skills in django framework. 
                         I used mdbootstrap template for this site. You can access the source on my github below.`,
 
         "source_code": "https://github.com/abigaelvs/djecommerce",
@@ -42,9 +42,9 @@ var portfolio = {
     3: {
         "title": "To do App",
         "short_description": "A todo app to manage your task",
-        "description": `After learning the basic of flask, i try to build a website using this framework. 
-                        I want to build a simple website because i want to sharpen my skill on this framework. 
-                        So this is what i came for. You can access the source code on my github below.`,
+        "description": `After learning the basics of flask, I try to build a website using this framework. 
+                        I want to build a simple website because I want to sharpen my skill on this framework. 
+                        This is the result. You can access the source code on my github below.`,
 
         "source_code": "https://github.com/abigaelvs/flask-todo-app",
         "demo": "",
@@ -57,8 +57,8 @@ var portfolio = {
     4: {
         "title": "Contact List App",
         "short_description": "A contact list app using django framework",
-        "description": `After learning the basic of django i want to sharpen my knowledge and do some practice. 
-                        So i think to built contact list app. You can access the source code on my github below.`,
+        "description": `After learning the basics of django I want to sharpen my knowledge and do some practice. 
+                        So I decided to build contact list app. You can access the source code on my github below.`,
 
         "source_code": "https://github.com/abigaelvs/django-contact-list",
         "demo": "",
@@ -71,10 +71,10 @@ var portfolio = {
     5: {
         "title": "Youtube video downloader",
         "short_description": "A project to download your youtube video",
-        "description": `Sometimes i want to download a youtube video. 
+        "description": `Sometimes I want to download a youtube video. 
                         I found an extension on google chrome but the video resolution provided is limited. 
-                        So i decided to build my own youtube video downloader using pytube library and 
-                        made the web interface using flask framework. Your can see the source code on my github below.`,
+                        So I decided to build my own youtube video downloader using pytube library and 
+                        made the web interface using flask framework. You can see the source code on my github below.`,
         
         "source_code": "https://github.com/abigaelvs/ytdownloader",
         "demo":"",
@@ -88,9 +88,9 @@ var portfolio = {
         "title": "Weather App",
         "short_description": "A project to forecast weather",
 
-        "description": `After learning the basic of API, i want to sharpen my knowledge and do some practice. 
-                        So i search for open API on google and i found the interesting one, weather API. 
-                        So i read the API docs and buit the web interface using flask. You can see the source code on my github below.`,
+        "description": `After learning the basics of API, I want to sharpen my knowledge and do some practice. 
+                        So I search for open API on google and I found the interesting one, weather API. 
+                        So I read the API docs and built the web interface using flask. You can see the source code on my github below.`,
         
         "source_code": "https://github.com/abigaelvs/weather-app",
         "demo": "",
@@ -104,8 +104,8 @@ var portfolio = {
         "title": "Image Classification",
         "short_description": "A project to classify the image",
 
-        "description": `When i start learning about machine learning, i took an online course on dicoding. 
-                        This is a project from dicoding. You can access the source code on my github below.`,
+        "description": `When I started learning about machine learning, I took an online course on dicoding. 
+                        This is a project from dicoding. You can view the notebook on Google Colab below.`,
 
         "source_code": "https://colab.research.google.com/drive/1JGltPyDbXiZtKYO-OD7KA4M5Onte01HC?usp=sharing",
         "demo": "",
@@ -135,25 +135,19 @@ var socials = {
 
 var skills = {
     "Backend Developer": {
-        "details": "Medium, 1 Years",
+        "details": "C#, .NET",
         "icon": "bx bx-network-chart",
-        "skills": {
-            "Python": "95%",
-            "Django": "92%",
-            "Flask": "85%",
-            "FastAPI": "50%",
-            "SQL": "80%"
-        }
+        "skills": ["C#", ".NET Core Web API", "Java", "Spring Boot", "Microservices & API Gateway", "Python"]
     },
     "Frontend Developer": {
-        "details": "Medium, 1 Years",
+        "details": "Blazor, Angular",
         "icon": "bx bx-code-curly",
-        "skills": {
-            "HTML": "90%",
-            "CSS": "87%",
-            "Bootstrap": "85%",
-            "Javascript": "75%"
-        }
+        "skills": ["Blazor", "Angular", "JavaScript", "TypeScript", "HTML", "CSS"]
+    },
+    "Database & Tools": {
+        "details": "SQL Server, PostgreSQL",
+        "icon": "bx bx-server",
+        "skills": ["SQL Server", "PostgreSQL", "SSRS", "Payment Gateway (Midtrans)", "Git"]
     }
 };
 
@@ -198,12 +192,13 @@ var homeSocials = document.querySelector(".home-social"),
 
 // create social icon on the home and footer section
 if (footerSocials != null) {
-    for (s in socials) {
+    for (const s in socials) {
         if (homeSocials != null) {
             // home
             var homeSocial = document.createElement("a");
             homeSocial.className = "home-social-icon";
             homeSocial.href = socials[s]["link"];
+            homeSocial.target = "_blank"; homeSocial.rel = "noopener"; homeSocial.setAttribute("aria-label", s);
 
             var homeIcon = document.createElement("i");
             homeIcon.className = socials[s]["icon"];
@@ -216,6 +211,7 @@ if (footerSocials != null) {
             var contactSocial = document.createElement("a");
             contactSocial.className = "contact-social";
             contactSocial.href = socials[s]["link"];
+            contactSocial.target = "_blank"; contactSocial.rel = "noopener"; contactSocial.setAttribute("aria-label", s);
 
             var contactIcon = document.createElement("i");
             contactIcon.className = socials[s]["icon"];
@@ -229,6 +225,7 @@ if (footerSocials != null) {
         var footerSocial = document.createElement("a");
         footerSocial.className = "footer-social";
         footerSocial.href = socials[s]["link"];
+        footerSocial.target = "_blank"; footerSocial.rel = "noopener"; footerSocial.setAttribute("aria-label", s);
 
         var footerIcon = document.createElement("i");
         footerIcon.className = socials[s]["icon"];
@@ -239,25 +236,9 @@ if (footerSocials != null) {
 }
 
 
-var aboutContainer = document.getElementById("about")
-if (aboutContainer != null) {
-    // count years experience base on year
-    var date = new Date(),
-    result = Number(date.getFullYear()) - 2020,
-    yearsExperience = document.getElementById("years-experience");
-
-    // if result less than 10, we format the number with 0 in front
-    // else we return result
-    if (result < 10) {
-        yearsExperience.textContent = "0" + result;
-    } else {
-        yearsExperience.textContent = result;
-    }
-}
-
 var skillsContainer = document.querySelector(".skills-container");
 if (skillsContainer != null) {
-    for (skill in skills) {
+    for (const skill in skills) {
         var skillsContent = document.createElement("div");
         skillsContent.className = "skills-content skills-open";
 
@@ -268,7 +249,7 @@ if (skillsContainer != null) {
         skillsIcon.className = "skills-icon " + skills[skill]["icon"];
 
         var div = document.createElement("div")
-        var skillsTitle = document.createElement("h1");
+        var skillsTitle = document.createElement("h3");
         skillsTitle.className = "skills-title";
         skillsTitle.textContent = skill;
 
@@ -291,7 +272,7 @@ if (skillsContainer != null) {
         skillsList.className = "skills-list grid";
 
         var list = skills[skill]["skills"]
-        for (s in list) {
+        for (const s of list) {
             var skillsData = document.createElement("div");
             skillsData.className = "skills-data";
 
@@ -302,24 +283,8 @@ if (skillsContainer != null) {
             skillsName.className = "skills-name";
             skillsName.textContent = s;
 
-            var skillsNumber = document.createElement("span");
-            skillsNumber.className = "skills-number";
-            skillsNumber.textContent = list[s];
-
-
-            var skillsBar = document.createElement("div");
-            skillsBar.className = "skills-bar";
-
-            var skillsPercentage = document.createElement("span");
-            skillsPercentage.className = "skills-percentage"
-            skillsPercentage.style = "width: " + list[s] + ";";
-
             skillsTitle.appendChild(skillsName)
-            skillsTitle.appendChild(skillsNumber)
             skillsData.appendChild(skillsTitle)
-
-            skillsBar.appendChild(skillsPercentage)
-            skillsData.appendChild(skillsBar)
 
             skillsList.appendChild(skillsData)
         }
@@ -337,7 +302,7 @@ var skillsContent = document.getElementsByClassName('skills-content'),
 function toggleSkills() {
     let itemClass = this.parentNode.className
 
-    for (i = 0; i < skillsContent.length; i++) {
+    for (let i = 0; i < skillsContent.length; i++) {
         skillsContent[i].className = 'skills-content skills-close'
     }
     if (itemClass === 'skills-content skills-close') {
@@ -350,26 +315,21 @@ skillsHeader.forEach((el) => {
 })
 
 
-// qualification tabs
-const tabs = document.querySelectorAll('[data-target]'),
-    tabContents = document.querySelectorAll('[data-content]')
+// show more for long experience/education text
+document.querySelectorAll('.qualification-body').forEach(body => {
+    if (body.scrollHeight <= body.clientHeight) return
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.target)
-
-        tabContents.forEach(tabContent => {
-            tabContent.classList.remove('qualification-active')
-        })
-
-        target.classList.add('qualification-active')
-
-        tabs.forEach(tab => {
-            tab.classList.remove('qualification-active')
-        })
-
-        tab.classList.add('qualification-active')
+    body.classList.add('is-clamped')
+    const button = document.createElement('button')
+    button.className = 'qualification-more'
+    button.textContent = 'Show more'
+    button.setAttribute('aria-expanded', 'false')
+    button.addEventListener('click', () => {
+        const open = body.classList.toggle('expanded')
+        button.textContent = open ? 'Show less' : 'Show more'
+        button.setAttribute('aria-expanded', open)
     })
+    body.after(button)
 })
 
 var portfolioContainer = document.querySelector(".portfolio-container")
@@ -382,6 +342,7 @@ function createPortfolio(img, title, shortDescription, portfolioId) {
     var portfolioImg = document.createElement("img");
     portfolioImg.src = img
     portfolioImg.className = "portfolio-img";
+    portfolioImg.alt = title; portfolioImg.loading = "lazy";
 
     var portfolioData = document.createElement("div");
     portfolioData.className = "portfolio-data";
@@ -418,7 +379,7 @@ function createPortfolio(img, title, shortDescription, portfolioId) {
 }
 
 if (portfolioContainer != null) {
-    for (p in portfolio) {
+    for (const p in portfolio) {
         createPortfolio(portfolio[p]["images"][1],
                         portfolio[p]["title"],
                         portfolio[p]["short_description"],
@@ -432,17 +393,6 @@ if (portfolioContainer != null) {
     completedProject.textContent = portfolioContent.length;
 }
 
-var detailsButton = document.querySelectorAll(".portfolio-button");
-[...detailsButton].forEach(button => {
-    button.addEventListener("click", () => {
-        var detailsClass = button.classList
-        var portfolioClass = detailsClass[detailsClass.length - 1]
-        idSplit = portfolioClass.split("-")
-        id = Number(idSplit[idSplit.length - 1])
-        
-        document.cookie = "portfolioId=" + id
-    })
-})
 
 
 // portfolio swiper
@@ -472,12 +422,12 @@ if (sectionsHome != null) {
         sections.forEach(current =>{
             const sectionHeight = current.offsetHeight
             const sectionTop = current.offsetTop - 50;
-            sectionId = current.getAttribute('id')
+            const sectionId = current.getAttribute('id')
 
             if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-                document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
+                document.querySelector('.nav-menu a[href*=' + sectionId + ']')?.classList.add('active-link')
             }else{
-                document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
+                document.querySelector('.nav-menu a[href*=' + sectionId + ']')?.classList.remove('active-link')
             }
         })
     }
@@ -526,7 +476,7 @@ if (selectedTheme) {
         document.body.classList.add(darkTheme)
         themeButton.classList.toggle(iconTheme)
     } else {
-        document.body.classList.remove(iconTheme)
+        document.body.classList.remove(darkTheme)
     }
 }
 
@@ -546,20 +496,22 @@ var detailsContainer = document.querySelector(".details-container");
 if (detailsContainer != null) {
 
     const params = new URLSearchParams(window.location.search).get("id");
-    selectedPortfoliio = portfolio[Number(params)];
+    const selectedPortfolio = portfolio[Number(params)];
+    if (!selectedPortfolio) { window.location.replace("index.html#portfolio"); throw new Error("invalid portfolio id"); }
 
     var sectionTitle = document.querySelector(".section-title");
-    sectionTitle.textContent = selectedPortfoliio["title"];
+    sectionTitle.textContent = selectedPortfolio["title"];
 
     var detailsDescription = document.querySelector(".details-description");
-    detailsDescription.textContent = selectedPortfoliio["description"];
+    detailsDescription.textContent = selectedPortfolio["description"];
 
     var detailButtons = document.querySelector(".detail-buttons");
 
-    if (selectedPortfoliio["demo"] != "") {    
+    if (selectedPortfolio["demo"] != "") {    
         var demoButton = document.createElement("a");
         demoButton.className = "button button-flex detail-button";
-        demoButton.href = selectedPortfoliio["demo"];
+        demoButton.href = selectedPortfolio["demo"];
+        demoButton.target = "_blank"; demoButton.rel = "noopener";
         demoButton.textContent = "Demo";
 
         var demoIcon = document.createElement("i");
@@ -569,10 +521,11 @@ if (detailsContainer != null) {
         detailButtons.appendChild(demoButton)
     }
 
-    if (selectedPortfoliio["source_code"] != "") {
+    if (selectedPortfolio["source_code"] != "") {
         var sourceCodeButton = document.createElement("a");
         sourceCodeButton.className = "button button-flex detail-button";
-        sourceCodeButton.href = selectedPortfoliio["source_code"];
+        sourceCodeButton.href = selectedPortfolio["source_code"];
+        sourceCodeButton.target = "_blank"; sourceCodeButton.rel = "noopener";
         sourceCodeButton.textContent = "Source Code";
 
         var sourceCodeIcon = document.createElement("i");
@@ -582,14 +535,15 @@ if (detailsContainer != null) {
         detailButtons.appendChild(sourceCodeButton)
 
     }
-    var images = selectedPortfoliio["images"];
-    for (img in images) {
+    var images = selectedPortfolio["images"];
+    for (const img in images) {
         var imageDiv = document.createElement("div");
         imageDiv.className = "image-div grid swiper-slide";
 
         var newImage = document.createElement("img");
         newImage.src = images[img];
         newImage.className = "details-img";
+        newImage.alt = selectedPortfolio["title"];
 
         imageDiv.appendChild(newImage);
         swiperWrapper.appendChild(imageDiv);
