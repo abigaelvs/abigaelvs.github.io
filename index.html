@@ -1,358 +1,617 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Abigael Vaneakh | Software Engineer</title>
+    <meta name="description" content="Abigael Vaneakh, an experienced Software Engineer skilled in full stack development with C#, .NET and Blazor.">
 
-    <!-- favicon -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Abigael Vaneakh | Software Engineer">
+    <meta property="og:description" content="Experienced Software Engineer skilled in Full Stack Development with C#, .NET and Blazor.">
+    <meta property="og:image" content="assets/img/abigaelvs.png">
+
     <link rel="icon" href="assets/img/icon.png">
-
-    <!-- icon -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- swiper css -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
-    <!-- own css -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>Abigael Vaneakh</title>
+    <!-- apply saved / system theme before paint to avoid a flash -->
+    <script>
+      try {
+        const t = localStorage.getItem('selected-theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark-theme');
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
 
-    <!-- navbar -->
+    <!-- header -->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav-logo">Abigael Vaneakh</a>
+        <a href="#home" class="nav-logo">Abigael Vaneakh</a>
 
         <div class="nav-menu" id="navMenu">
-          <ul class="nav-list grid">
-            <li class="nav-item">
-              <a href="#home" class="nav-link active-link">
-                <i class='bx bx-home-alt nav-icon' ></i> Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#about" class="nav-link">
-                <i class='bx bx-user nav-icon'></i> About
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#skills" class="nav-link">
-                <i class='bx bx-file nav-icon'></i> Skills
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#portfolio" class="nav-link">
-                <i class='bx bx-images nav-icon' ></i> Portfolio
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link">
-                <i class='bx bx-paper-plane nav-icon'></i> Contact
-              </a>
-            </li>
+          <ul class="nav-list">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
           </ul>
-          <i class='bx bx-x nav-close' id="navClose"></i>
         </div>
 
-        <div class="nav-btns">
-          <!-- theme change button -->
-          <i class='bx bx-moon change-theme' id="theme-button"></i>
-          <div class="nav-toggle" id="navToggle">
-            <i class='bx bx-grid-alt' ></i>
-          </div>
+        <div class="nav-actions">
+          <button class="icon-button" id="themeButton" aria-label="Toggle dark mode"><i class="bx bx-moon"></i></button>
+          <a href="assets/pdf/CV-Abigael-Vaneakh.pdf" download class="button button-small nav-cv">
+            Download CV <i class="bx bx-download"></i>
+          </a>
+          <button class="icon-button nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><i class="bx bx-menu"></i></button>
         </div>
       </nav>
     </header>
 
-    <!-- main -->
-    <main class="main">
-      <!-- home -->
-      <section class="home section" id="home">
-        <div class="home-container container grid">
-          <div class="home-content grid">
-            <div class="home-social">
-              
-            </div>
+    <main>
+      <!-- hero -->
+      <section class="hero container" id="home">
+        <div class="hero-grid">
+          <div>
+            <span class="badge"><span class="badge-dot"></span> Software Engineer</span>
+            <h1 class="hero-title">Hi, I'm <span>Abigael Vaneakh</span></h1>
+            <p class="hero-tagline">Experienced Software Engineer skilled in Full Stack Development</p>
+            <p class="hero-stack">C# · .NET · Blazor</p>
 
-            <div class="home-img">
-              <svg class="home-blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <mask id="mask0" mask-type="alpha">
-                      <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                      130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                      97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                      0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                  </mask>
-                  <g mask="url(#mask0)">
-                      <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                      165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                      129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                      -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                      <image class="home-blob-img" x='12' y='20' xlink:href="assets/img/abigaelvs.png"/>
-                  </g>
-              </svg>            
-            </div>
-
-            <div class="home-data">
-              <h1 class="home-title">Hi, I'm Abigael</h1>
-              <h3 class="home-subtitle">Software Engineer</h3>
-              <p class="home-description">Experienced Software Engineer skilled in Full Stack Development</p>
-              
-              <a href="#contact" class="button button-flex">
-                Contact Me <i class='bx bx-paper-plane button-icon' ></i>
-              </a>
+            <div class="hero-actions">
+              <a href="https://wa.me/62895613370019" target="_blank" rel="noopener" class="button"><i class="bx bxl-whatsapp"></i> Chat WhatsApp</a>
+              <a href="mailto:abigaelvas@gmail.com" class="button button-ghost"><i class="bx bx-envelope"></i> Send Email</a>
+              <a href="assets/pdf/CV-Abigael-Vaneakh.pdf" download class="button button-ghost"><i class="bx bx-download"></i> Download CV</a>
+              <a href="https://www.linkedin.com/in/abigael-vaneakh-76a580199/" target="_blank" rel="noopener" class="icon-button" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://github.com/abigaelvs" target="_blank" rel="noopener" class="icon-button" aria-label="GitHub"><i class="bx bxl-github"></i></a>
             </div>
           </div>
 
-          <div class="home-scroll">
-            <a href="#about" class="home-scroll-button button-flex">
-                <i class='bx bx-mouse home-scroll-mouse' ></i>
-                <span class="home-scroll-name">Scroll Down</span>
-                <i class='bx bx-down-arrow-alt home-scroll-arrow'></i>
-            </a>
+          <div class="hero-photo">
+            <img src="assets/img/abigaelvs.png" alt="Abigael Vaneakh" width="360" height="360">
+          </div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric card">
+            <p class="metric-label">Experience</p>
+            <p class="metric-value">5+ Years</p>
+            <p class="metric-text">Enterprise healthcare and payment systems</p>
+          </div>
+          <div class="metric card">
+            <p class="metric-label">Core Stack</p>
+            <p class="metric-value">.NET · C# · Blazor</p>
+            <p class="metric-text">Java, Spring Boot, Python</p>
           </div>
         </div>
       </section>
 
       <!-- about -->
-      <section class="about section" id="about">
-        <h2 class="section-title">About Me</h2>
-        <span class="section-subtitle">My introduction</span>
-
-        <div class="about-container container grid">
-          <img src="assets/img/cv-photo-red.jpg" alt="Abigael Vaneakh" class="about-img">
-
-          <div class="about-data">
-            <p class="about-description">
-                Software Engineer with 3+ years of experience building enterprise healthcare systems with .NET Core, Angular, and PostgreSQL. At Siloam Hospitals, I helped build MySiloam Cashier, moving a legacy desktop payment system to a web-based microservice architecture, including the API Gateway, shared libraries, and team coding standards. I also delivered integrations with Midtrans, multi-bank EDC machines, insurance, and other hospital systems, backed by SSRS reporting and performance testing for high-traffic reliability.
-            </p>
-
-            <div class="about-info">
-              <div>
-                <span class="about-info-title">3+</span>
-                <span class="about-info-name">Years <br> Experience</span>
-              </div>
-              <div>
-                <span class="about-info-title" id="completed-project">5</span>
-                <span class="about-info-name">Completed <br> Project</span>
-              </div>
-            </div>
-
-            <div class="about-buttons">
-              <a download href="assets/pdf/CV-Abigael-Vaneakh.pdf" class="button button-flex">
-                Download CV <i class='bx bx-download button-icon'></i>
-              </a>
-            </div>
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">About</span>
+            <h2 class="section-title">A bit about me</h2>
           </div>
+          <p class="about-text">
+            Software Engineer with 5+ years of experience building enterprise systems in healthcare and banking at PT. Nusantara Duta Solusindo. For Siloam Hospitals, I helped build MySiloam Cashier, moving a legacy desktop payment system to a web-based microservice architecture, with integrations for Midtrans, multi-bank EDC machines, insurance, and other hospital systems. Since 2024 I have worked on banking and finance projects for BNI, Adira, and Bank SMBC Indonesia, building integration services on IBM webMethods, Java and Spring Boot backends, and a 3-D Secure authentication service backed by Oracle, Kafka, and Redis.
+          </p>
         </div>
       </section>
 
       <!-- skills -->
-      <section class="skills section" id="skills">
-        <h2 class="section-title">Skills</h2>
-        <span class="section-subtitle">My Technical Skills</span>
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Skills</span>
+            <h2 class="section-title">Technical skills</h2>
+            <p class="section-text">Technologies I use to build and ship production systems.</p>
+          </div>
 
-        <div class="skills-container container grid">
+          <label class="search">
+            <i class="bx bx-search"></i>
+            <input type="search" id="skillSearch" placeholder="Search skill (e.g. C#, .NET, Redis)" aria-label="Search skills" autocomplete="off">
+          </label>
 
+          <div class="filters" role="group" aria-label="Filter skills">
+            <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter" data-filter="languages" aria-pressed="false">Programming Languages</button>
+            <button class="filter" data-filter="backend" aria-pressed="false">Backend Frameworks</button>
+            <button class="filter" data-filter="frontend" aria-pressed="false">Frontend Frameworks</button>
+            <button class="filter" data-filter="integration" aria-pressed="false">APIs &amp; Integrations</button>
+            <button class="filter" data-filter="databases" aria-pressed="false">Databases &amp; Caching</button>
+            <button class="filter" data-filter="messaging" aria-pressed="false">Messaging &amp; Reporting</button>
+            <button class="filter" data-filter="testing" aria-pressed="false">Testing &amp; Quality Assurance</button>
+            <button class="filter" data-filter="tools" aria-pressed="false">DevOps &amp; Tools</button>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-group card" data-group="languages">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="bx bx-code-alt"></i></span>
+                <h3>Programming Languages</h3>
+                <span class="skill-count">7</span>
+              </div>
+              <div class="chips">
+                <span class="chip">C#</span>
+                <span class="chip">Java</span>
+                <span class="chip">Python</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+              </div>
+            </div>
+
+            <div class="skill-group card" data-group="backend">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="bx bx-server"></i></span>
+                <h3>Backend Frameworks</h3>
+                <span class="skill-count">5</span>
+              </div>
+              <div class="chips">
+                <span class="chip">.NET</span>
+                <span class="chip">MVC</span>
+                <span class="chip">Spring Boot</span>
+                <span class="chip">Struts 2</span>
+                <span class="chip">Node.js</span>
+              </div>
+            </div>
+
+            <div class="skill-group card" data-group="frontend">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="bx bx-code-curly"></i></span>
+                <h3>Frontend Frameworks</h3>
+                <span class="skill-count">4</span>
+              </div>
+              <div class="chips">
+                <span class="chip">Blazor</span>
+                <span class="chip">Angular</span>
+                <span class="chip">React</span>
+                <span class="chip">Next.js</span>
+              </div>
+            </div>
+
+            <div class="skill-group card" data-group="integration">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="bx bx-network-chart"></i></span>
+                <h3>APIs &amp; Integrations</h3>
+                <span class="skill-count">5</span>
+              </div>
+              <div class="chips">
+                <span class="chip">Microservices</span>
+                <span class="chip">API Gateway</span>
+                <span class="chip">Midtrans</span>
+                <span class="chip">EDC Integration</span>
+                <span class="chip">webMethods</span>
+              </div>
+            </div>
+
+            <div class="skill-group card" data-group="databases">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="bx bx-data"></i></span>
+                <h3>Databases &amp; Caching</h3>
+                <span class="skill-count">7</span>
+              </div>
+              <div class="chips">
+                <span class="chip">SQL Server</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Oracle</span>
+                <span class="chip">MariaDB</span>
+                <span class="chip">MySQL</span>
+                <span class="chip">SQLite</span>
+                <span class="chip">Redis</span>
+              </div>
+            </div>
+
+            <div class="skill-group card" data-group="messaging">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="bx bx-bar-chart-alt-2"></i></span>
+                <h3>Messaging &amp; Reporting</h3>
+                <span class="skill-count">2</span>
+              </div>
+              <div class="chips">
+                <span class="chip">Kafka</span>
+                <span class="chip">SSRS</span>
+              </div>
+            </div>
+
+            <div class="skill-group card" data-group="testing">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="bx bx-check-shield"></i></span>
+                <h3>Testing &amp; Quality Assurance</h3>
+                <span class="skill-count">4</span>
+              </div>
+              <div class="chips">
+                <span class="chip">xUnit</span>
+                <span class="chip">Playwright</span>
+                <span class="chip">SonarQube</span>
+                <span class="chip">JMeter</span>
+              </div>
+            </div>
+
+            <div class="skill-group card" data-group="tools">
+              <div class="skill-head">
+                <span class="skill-icon"><i class="bx bx-wrench"></i></span>
+                <h3>DevOps &amp; Tools</h3>
+                <span class="skill-count">6</span>
+              </div>
+              <div class="chips">
+                <span class="chip">Docker</span>
+                <span class="chip">OpenShift / Kubernetes</span>
+                <span class="chip">Jenkins</span>
+                <span class="chip">Git</span>
+                <span class="chip">Performance Testing</span>
+                <span class="chip">Coding Standards</span>
+              </div>
+            </div>
+          </div>
+          <p class="skills-empty" id="skillsEmpty" hidden>No skill matches your search.</p>
         </div>
       </section>
 
       <!-- experience -->
-      <section class="qualification section" id="experience">
-        <h2 class="section-title">Experience</h2>
-        <span class="section-subtitle">Where I've worked</span>
-
+      <section class="section" id="experience">
         <div class="container">
-          <div class="qualification-item">
-            <span class="qualification-rounder"></span>
-            <div>
-              <h3 class="qualification-title">Software Engineer</h3>
-              <span class="qualification-subtitle">Siloam Hospitals Group · Hybrid</span>
-              <div class="qualification-calendar">
-                <i class='bx bx-calendar'></i>
-                Oct 2021 - Sep 2024 · 3 yrs
+          <div class="section-head">
+            <span class="eyebrow">Experience</span>
+            <h2 class="section-title">Where I've worked</h2>
+          </div>
+
+          <div class="jobs">
+            <div class="employer">
+              <div class="employer-head">
+                <div>
+                  <p class="job-company">PT. Nusantara Duta Solusindo</p>
+                  <h3 class="job-role">Software Engineer</h3>
+                </div>
+                <div class="job-meta">
+                  <p>Oct 2021 – Present</p>
+                  <p>Projects I have worked on</p>
+                </div>
               </div>
-              <div class="qualification-body">
-                <p>Siloam Hospitals built MySiloam Cashier, a new payment system for cashiers that upgraded the previous desktop-based system to a web-based microservice architecture.</p>
-                <ul class="qualification-list">
-                  <li>Conducted research and evaluation across technical aspects of the project</li>
-                  <li>Designed and established coding standards and best practices for the development team</li>
-                  <li>Developed and maintained shared libraries to accelerate development across modules</li>
-                  <li>Implemented backend services using .NET Core Web API to handle cashier transactions and payment workflows</li>
-                  <li>Built frontend modules using Angular for cashier operations and reporting features</li>
-                  <li>Designed and implemented an API Gateway to integrate and manage communication across multiple .NET microservices</li>
-                  <li>Integrated the system with Midtrans Payment Gateway for secure and seamless payment processing</li>
-                  <li>Implemented integration with EDC machines from multiple banks through Serial Port communication (JavaScript) and .NET middleware</li>
-                  <li>Integrated the system with multiple surrounding hospital systems to ensure interoperability</li>
-                  <li>Implemented integration with insurance systems to support patient billing and claim processes</li>
-                  <li>Designed and implemented reporting solutions using SQL Server Reporting Services (SSRS) for financial and transactional data</li>
-                  <li>Conducted performance testing to ensure system stability and responsiveness under high traffic loads</li>
-                  <li>Integrated the system with PostgreSQL database for data storage and retrieval</li>
-                  <li>Performed debugging, troubleshooting, and bug fixing for both backend and frontend components</li>
-                </ul>
+
+              <div class="project-list">
+                <article class="job card">
+                  <div class="job-head">
+                    <div>
+                      <p class="job-company">PT Bank Negara Indonesia (Persero) Tbk</p>
+                      <h3 class="job-role">VCAS 3DS Implementation</h3>
+                    </div>
+                    <div class="job-meta">
+                      <p>Jan 2026 – Present</p>
+                    </div>
+                  </div>
+                  <div class="job-body">
+                    <p>Implementation of the Visa Consumer Authentication Service (VCAS) for 3-D Secure (3DS) card authentication on the issuer side, strengthening cardholder authentication for online transactions in line with EMV 3DS and Visa security standards. Built and configured the integration layer on IBM webMethods Integration Server to orchestrate the core 3DS authentication flows (Initiate, Validate, Step-Up, and Out-of-Band/OOB), including secure message exchange using JWE with RSA-OAEP encryption and certificate lifecycle management. Designed the supporting backend architecture with a high-availability Oracle Database for the DC/DR topology, Apache Kafka for transaction error auditing, and Redis Cluster for session and authentication data staging, while preparing hardware sizing and microservice deployment on OpenShift/Kubernetes.</p>
+                    <ul class="job-list">
+                      <li>Developed the user interface for the 3D Secure authentication process</li>
+                      <li>Developed backend services using webMethods Integration Server</li>
+                      <li>Integrated webMethods services with Redis Cluster for distributed data storage and caching</li>
+                      <li>Integrated webMethods services with Apache Kafka Cluster for event-driven communication and message processing</li>
+                      <li>Performed testing, debugging, and issue resolution throughout the development lifecycle</li>
+                      <li>Collaborated with the project lead to ensure business and technical requirements were fulfilled</li>
+                    </ul>
+                  </div>
+                  <div class="chips">
+                    <span class="chip chip-outline">IBM webMethods</span>
+                    <span class="chip chip-outline">Apache Kafka</span>
+                    <span class="chip chip-outline">Redis Cluster</span>
+                    <span class="chip chip-outline">Oracle</span>
+                  </div>
+                </article>
+
+                <article class="job card">
+                  <div class="job-head">
+                    <div>
+                      <p class="job-company">PT Bank Negara Indonesia (Persero) Tbk</p>
+                      <h3 class="job-role">Fleksi Loan Application System (PoC)</h3>
+                    </div>
+                    <div class="job-meta">
+                      <p>Nov 2025 – Dec 2025</p>
+                    </div>
+                  </div>
+                  <div class="job-body">
+                    <p>Proof of Concept (PoC) for BNI's Retail Credit Tools (Fleksi) platform, a loan origination solution designed to support the end-to-end retail credit process, including customer data collection, verification, scoring, approval, and disbursement workflows. The project focused on validating the integration architecture and business processes through IBM webMethods.</p>
+                    <ul class="job-list">
+                      <li>Developed integration services using webMethods Integration Server</li>
+                      <li>Implemented service orchestration to support loan application processing workflows</li>
+                      <li>Conducted testing, debugging, and issue resolution for integration services</li>
+                      <li>Collaborated with the project lead during the PoC implementation phase</li>
+                    </ul>
+                  </div>
+                  <div class="chips">
+                    <span class="chip chip-outline">webMethods</span>
+                    <span class="chip chip-outline">Oracle</span>
+                  </div>
+                </article>
+
+                <article class="job card">
+                  <div class="job-head">
+                    <div>
+                      <p class="job-company">PT Bank Negara Indonesia (Persero) Tbk</p>
+                      <h3 class="job-role">Bill Payment System (PoC)</h3>
+                    </div>
+                    <div class="job-meta">
+                      <p>Sep 2025 – Oct 2025</p>
+                    </div>
+                  </div>
+                  <div class="job-body">
+                    <p>Proof of Concept (PoC) for a Bill Payment System to validate the technical feasibility of bill payment transaction processing and enterprise system integration. The solution was designed to support seamless communication between multiple systems while providing a user-friendly interface for bill payment operations and transaction management.</p>
+                    <ul class="job-list">
+                      <li>Developed the Bill Payment Engine using Spring Boot and Java</li>
+                      <li>Designed and developed the user interface using Next.js</li>
+                      <li>Implemented and integrated services through webMethods for enterprise system communication</li>
+                      <li>Researched and explored webMethods features and integration capabilities</li>
+                      <li>Created webMethods development standards and implementation guidelines for the project team</li>
+                      <li>Rewrote and migrated the Text Formatting Engine from Java EE to a Maven-based architecture</li>
+                      <li>Performed testing and troubleshooting throughout the development lifecycle</li>
+                    </ul>
+                  </div>
+                  <div class="chips">
+                    <span class="chip chip-outline">Next.js</span>
+                    <span class="chip chip-outline">Spring Boot</span>
+                    <span class="chip chip-outline">Java</span>
+                    <span class="chip chip-outline">Maven</span>
+                    <span class="chip chip-outline">REST API</span>
+                    <span class="chip chip-outline">webMethods</span>
+                    <span class="chip chip-outline">Oracle</span>
+                  </div>
+                </article>
+
+                <article class="job card">
+                  <div class="job-head">
+                    <div>
+                      <p class="job-company">PT. Adira Dinamika Multi Finance, Tbk</p>
+                      <h3 class="job-role">Limit Management Engine – Credit Limit Management REST API</h3>
+                    </div>
+                    <div class="job-meta">
+                      <p>Feb 2025 – Aug 2025</p>
+                    </div>
+                  </div>
+                  <div class="job-body">
+                    <p>Change request (CR Indicative Payment, Opsi C, and print documents). The Limit Management Engine (LME) was enhanced to provide approval information and limit/installment values to customers quickly, making it easier to apply for a Multipurpose Loan and receive funds faster. Based on evaluation results, process improvements were also needed, especially in printing the credit agreement.</p>
+                    <ul class="job-list">
+                      <li>Monitored system development progress to ensure smooth execution of change requests</li>
+                      <li>Provided technical support in resolving issues</li>
+                    </ul>
+                  </div>
+                  <div class="chips">
+                    <span class="chip chip-outline">Eclipse</span>
+                    <span class="chip chip-outline">Spring Boot</span>
+                    <span class="chip chip-outline">Java</span>
+                    <span class="chip chip-outline">REST API</span>
+                    <span class="chip chip-outline">PostgreSQL</span>
+                  </div>
+                </article>
+
+                <article class="job card">
+                  <div class="job-head">
+                    <div>
+                      <p class="job-company">PT. Bank SMBC Indonesia, Tbk</p>
+                      <h3 class="job-role">RACE (Referral Management &amp; Customer Experience)</h3>
+                    </div>
+                    <div class="job-meta">
+                      <p>Jun 2024 – Sep 2025</p>
+                    </div>
+                  </div>
+                  <div class="job-body">
+                    <p>The SMBCI Retail Lending Business Unit collaborates with more than 40 pension partners. To expand its business portfolio, the unit leverages partner referrals. To support the customer referral process, it needed a platform for partner and PIC registration, as well as a referral process for existing partners and customers.</p>
+                    <ul class="job-list">
+                      <li>Developed web modules using Java Struts 2 for referral management and partner registration</li>
+                      <li>Performed debugging, troubleshooting, and bug fixing to ensure the stability of the referral process</li>
+                      <li>Collaborated with team members to ensure proper system integration and timely delivery</li>
+                    </ul>
+                  </div>
+                  <div class="chips">
+                    <span class="chip chip-outline">Eclipse</span>
+                    <span class="chip chip-outline">Spring Boot</span>
+                    <span class="chip chip-outline">Struts 2</span>
+                    <span class="chip chip-outline">REST API</span>
+                    <span class="chip chip-outline">MySQL</span>
+                  </div>
+                </article>
+
+                <article class="job card">
+                  <div class="job-head">
+                    <div>
+                      <p class="job-company">Siloam Hospitals Group</p>
+                      <h3 class="job-role">MySiloam Cashier</h3>
+                    </div>
+                    <div class="job-meta">
+                      <p>Oct 2021 – Sep 2024 · 3 yrs</p>
+                      <p>Indonesia · Hybrid</p>
+                    </div>
+                  </div>
+                  <div class="job-body">
+                    <p>Siloam Hospitals built MySiloam Cashier, a new payment system for cashiers that upgraded the previous desktop-based system to a web-based microservice architecture.</p>
+                    <ul class="job-list">
+                      <li>Conducted research and evaluation across technical aspects of the project</li>
+                      <li>Designed and established coding standards and best practices for the development team</li>
+                      <li>Developed and maintained shared libraries to accelerate development across modules</li>
+                      <li>Implemented backend services using .NET Core Web API to handle cashier transactions and payment workflows</li>
+                      <li>Built frontend modules using Angular for cashier operations and reporting features</li>
+                      <li>Designed and implemented an API Gateway to integrate and manage communication across multiple .NET microservices</li>
+                      <li>Integrated the system with Midtrans Payment Gateway for secure and seamless payment processing</li>
+                      <li>Implemented integration with EDC machines from multiple banks through Serial Port communication (JavaScript) and .NET middleware</li>
+                      <li>Integrated the system with multiple surrounding hospital systems to ensure interoperability</li>
+                      <li>Implemented integration with insurance systems to support patient billing and claim processes</li>
+                      <li>Designed and implemented reporting solutions using SQL Server Reporting Services (SSRS) for financial and transactional data</li>
+                      <li>Conducted performance testing to ensure system stability and responsiveness under high traffic loads</li>
+                      <li>Integrated the system with PostgreSQL database for data storage and retrieval</li>
+                      <li>Performed debugging, troubleshooting, and bug fixing for both backend and frontend components</li>
+                    </ul>
+                  </div>
+                  <div class="chips">
+                    <span class="chip chip-outline">.NET Core</span>
+                    <span class="chip chip-outline">C#</span>
+                    <span class="chip chip-outline">Angular</span>
+                    <span class="chip chip-outline">PostgreSQL</span>
+                    <span class="chip chip-outline">SQL Server</span>
+                    <span class="chip chip-outline">SSRS</span>
+                    <span class="chip chip-outline">Midtrans</span>
+                    <span class="chip chip-outline">Microservices</span>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- projects -->
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Projects</span>
+            <h2 class="section-title">Personal projects</h2>
+            <p class="section-text">Open-source work I build and maintain.</p>
+          </div>
+
+          <article class="project card">
+            <div class="project-head">
+              <span class="edu-icon"><i class="bx bx-package"></i></span>
+              <div>
+                <h3>Avids.Dapper.Lambda</h3>
+                <p class="project-sub">Open-source NuGet library · 1,800+ downloads</p>
+              </div>
+            </div>
+
+            <p class="project-desc">
+              A Dapper extension that adds lambda expressions with an elegant chain style, so queries and commands read like LINQ while staying on top of plain <code>IDbConnection</code>.
+            </p>
+
+<pre class="code"><code>con.QuerySet&lt;SysUser&gt;()
+   .Where(a =&gt; a.Email == "user@example.com")
+   .OrderBy(a =&gt; a.CreateDatetime)
+   .Select(a =&gt; new SysUser { Email = a.Email })
+   .PageList(1, 10);</code></pre>
+
+            <ul class="job-list">
+              <li>Built on Dapper and keeps the original <code>Execute</code> and <code>Query</code> methods available</li>
+              <li>Chained <code>QuerySet</code> and <code>CommandSet</code> APIs with <code>ExpressionBuilder</code> for dynamic filters</li>
+              <li>Full async support (<code>ToListAsync</code>, <code>GetAsync</code>, <code>InsertAsync</code>, <code>UpdateAsync</code>, <code>DeleteAsync</code>)</li>
+              <li>Respects native attributes such as <code>[Table]</code>, <code>[Key]</code>, and <code>[Column]</code></li>
+              <li>Published on NuGet under the MIT license, with a sample app and a unit test project in the repository</li>
+            </ul>
+
+            <div class="chips">
+              <span class="chip chip-outline">C#</span>
+              <span class="chip chip-outline">.NET 5+</span>
+              <span class="chip chip-outline">Dapper</span>
+              <span class="chip chip-outline">NuGet</span>
+              <span class="chip chip-outline">Lambda Expressions</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/abigaelvs/Avids.Dapper.Lambda" target="_blank" rel="noopener" class="button button-small"><i class="bx bxl-github"></i> Source Code</a>
+              <a href="https://www.nuget.org/packages/Avids.Dapper.Lambda" target="_blank" rel="noopener" class="button button-small button-ghost"><i class="bx bx-package"></i> NuGet Package</a>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="project-head">
+              <span class="edu-icon"><i class="bx bx-git-branch"></i></span>
+              <div>
+                <h3>RdlCore (fork)</h3>
+                <p class="project-sub">Open-source contribution · fork of NicFT/RdlCore</p>
+              </div>
+            </div>
+
+            <p class="project-desc">
+              A cross-platform .NET rendering engine for RDL/RDLC reports (the SSRS report format), exporting to PDF, Excel, Word, HTML, and more on Windows, Linux, and macOS. I maintain a fork and contributed the Linux build fix.
+            </p>
+
+            <ul class="job-list">
+              <li>Fixed the Release build on Linux: signed the ILRepack-merged assembly, which removed a <code>MethodAccessException</code> caused by <code>InternalsVisibleTo</code> rejecting an unsigned DLL</li>
+              <li>Excluded native assets under <code>/runtimes/</code> from the merge, since the filter only matched Windows-style paths</li>
+            </ul>
+
+            <div class="chips">
+              <span class="chip chip-outline">C#</span>
+              <span class="chip chip-outline">.NET</span>
+              <span class="chip chip-outline">SSRS / RDL</span>
+              <span class="chip chip-outline">ILRepack</span>
+              <span class="chip chip-outline">Linux</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://github.com/abigaelvs/RdlCore/commit/5a7f147573c1de421e32407b6a44bbf77337da79" target="_blank" rel="noopener" class="button button-small"><i class="bx bx-git-commit"></i> View Commit</a>
+              <a href="https://github.com/abigaelvs/RdlCore" target="_blank" rel="noopener" class="button button-small button-ghost"><i class="bx bxl-github"></i> Fork on GitHub</a>
+            </div>
+          </article>
         </div>
       </section>
 
       <!-- education -->
-      <section class="qualification section" id="education">
-        <h2 class="section-title">Education</h2>
-        <span class="section-subtitle">My academic journey</span>
+      <section class="section" id="education">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Education</span>
+            <h2 class="section-title">Academic background</h2>
+          </div>
 
-        <div class="qualification-sections container">
-          <div>
-            <div class="qualification-data">
+          <div class="edu-grid">
+            <div class="edu card">
+              <span class="edu-icon"><i class="bx bxs-graduation"></i></span>
               <div>
-                <h3 class="qualification-title">BINUS University</h3>
-                <span class="qualification-subtitle">Bachelor of Computer Science · GPA 3.87</span>
-                <div class="qualification-calendar">
-                  <i class='bx bx-calendar'></i>
-                  2022 - 2026
-                </div>
-              </div>
-
-              <div>
-                <span class="qualification-rounder"></span>
-                <span class="qualification-line"></span>
+                <h3>BINUS University</h3>
+                <p>Bachelor's degree, Computer Science · GPA 3.87</p>
+                <p class="edu-period">Aug 2022 – Aug 2026</p>
               </div>
             </div>
 
-            <div class="qualification-data">
-              <div></div>
-
+            <div class="edu card">
+              <span class="edu-icon"><i class="bx bx-book-open"></i></span>
               <div>
-                <span class="qualification-rounder"></span>
-              </div>
-
-              <div>
-                <h3 class="qualification-title">SMKN 3 Bogor</h3>
-                <span class="qualification-subtitle">3 Years</span>
-                <div class="qualification-calendar">
-                  <i class='bx bx-calendar'></i>
-                  2018 - 2021
-                </div>
+                <h3>SMKN 3 Bogor</h3>
+                <p>Vocational High School</p>
+                <p class="edu-period">2018 – 2021</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- contact -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="contact-card card">
+            <h2>Let's work together</h2>
+            <p>Have a project, a role, or just want to talk about software? My inbox is always open.</p>
 
-      <!-- portfolio -->
-      <section class="portfolio section" id="portfolio">
-        <h2 class="section-title">Portfolio</h2>
-        <span class="section-subtitle">Most recent work</span>
+            <div class="contact-actions">
+              <a href="mailto:abigaelvas@gmail.com" class="button"><i class="bx bx-envelope"></i> Send Email</a>
+              <a href="https://wa.me/62895613370019" target="_blank" rel="noopener" class="button button-ghost"><i class="bx bxl-whatsapp"></i> Chat WhatsApp</a>
+            </div>
 
-        <div class="portfolio-container container swiper-container">
-          <div class="swiper-wrapper">
-            
+            <div class="contact-info">
+              <span><i class="bx bx-envelope"></i> abigaelvas@gmail.com</span>
+              <span><i class="bx bx-map"></i> Bogor, Indonesia</span>
+            </div>
           </div>
-
-          <div class="portfolio-button-next swiper-button-next">
-            <i class='bx bxs-chevron-right swiper-portfolio-icon' ></i>
-          </div>
-          <div class="portfolio-button-prev swiper-button-prev">
-            <i class='bx bxs-chevron-left swiper-portfolio-icon' ></i>
-          </div>
-          <div class="swiper-pagination"></div>
         </div>
       </section>
-
-      <!-- contact me -->
-      <section class="contact section" id="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <span class="section-subtitle">Get in touch</span>
-
-        <div class="contact-container container grid">
-            <div>
-                <div class="contact-information">
-                    <i class='bx bxs-map contact-icon' ></i>
-    
-                    <div>
-                        <h3 class="contact-title">Abigael Vaneakh</h3>
-                        <span class="contact-subtitle">Bogor, Indonesia</span>
-                    </div>
-                </div>
-                <div class="contact-information">
-                    <i class='bx bx-phone contact-icon' ></i>
-
-                    <div>
-                        <h3 class="contact-title">Phone</h3>
-                        <span class="contact-subtitle">+62 895 - 6133 - 70019</span>
-                    </div>
-                </div>
-
-                <div class="contact-information">
-                    <i class='bx bx-envelope contact-icon' ></i>
-
-                    <div>
-                        <h3 class="contact-title">Email</h3>
-                        <span class="contact-subtitle"><a href="mailto:abigaelvas@gmail.com">abigaelvas@gmail.com</a></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form" >
-                <div class="contact-form-title">
-                    <h3>I'M ALSO ON SOCIAL NETWORK</h3>
-                </div>
-                <br>
-              
-                <p>You can also contact me through my social media below</p>
-
-                <br>
-            
-                <div class="contact-socials">
-
-                </div>
-                
-            </div>
-        </div>
-      </section>
-
-      <!-- footer -->
-      <footer class="footer">
-        <div class="footer-bg">
-          <div class="footer-container container grid">
-            <div>
-              <h1 class="footer-title">Abigael Vaneakh</h1>
-              <span class="footer-subtitle">Software Engineer</span>
-            </div>
-
-            <ul class="footer-links">
-              <li>
-                <a href="#about" class="footer-link">About</a>
-              </li>
-              <li>
-                <a href="#portfolio" class="footer-link">Portfolio</a>
-              </li>
-              <li>
-                <a href="#contact" class="footer-link">Contact</a>
-              </li>
-            </ul>
-
-            <div class="footer-socials">
-
-            </div>
-          </div>
-
-          <p class="footer-copy">&#169; Abigael Vaneakh. All right reserved</p>
-        </div>
-      </footer>
-
-      <!-- scroll top -->
-      <a href="#" class="scroll-up" id="scrollUp">
-        <i class='bx bxs-chevron-up scroll-up-icon' ></i>
-      </a>
     </main>
-    
-    <script src="assets/js/swiper-bundle.min.js"></script>
 
-    <!-- own js -->
+    <footer class="footer">
+      <div class="footer-inner container">
+        <p>&copy; <span id="year">2026</span> Abigael Vaneakh. All rights reserved.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/abigael-vaneakh-76a580199/" target="_blank" rel="noopener" class="icon-button" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/abigaelvs" target="_blank" rel="noopener" class="icon-button" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="https://www.instagram.com/abigaelvs/" target="_blank" rel="noopener" class="icon-button" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#home" class="scroll-up" id="scrollUp" aria-label="Back to top"><i class="bx bx-chevron-up"></i></a>
+
     <script src="assets/js/index.js"></script>
   </body>
 </html>
